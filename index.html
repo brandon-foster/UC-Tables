@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- DataTables dependencies -->
+    <style type="text/css" title="currentStyle">
+        @import "DataTables-1.9.4/media/css/jquery.dataTables.css";
+    </style>
+    <script type="text/javascript" charset="utf-8" src="DataTables-1.9.4/media/js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+
+    <script>
+        /*
+         * @author Brandon Foster
+         * @version 2013.05.22
+         *
+         * Finds data from an XML file to create tables grouped by catalog group.
+         *
+         */
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "catalog.xml",
+                dataType: "xml",
+                success: function(xml) {
+                    
+                    var catalogXml = $(xml);
+                    
+                    // Empty array of strings that appear in the content of catalog group elements in the XML.
+                    var groupsArray = [];
+                    
+                    var tableIdsArray = []; // Used in function makeDataTables(groupsArrayParam, tableIdsArrayParam)
+                    
+                    var tableId;
+                    
+                    //Populate the array with each catalog group
+                    function makeGroupsArray(xmlFile) {
+                        //Populate the groupsArray
+                        xmlFile.find('item catalogGroup').each(function(index, value) {
+                            var group = $(value).text();
+                            tableId = group.toLowerCase().split(" ").join('-');
+                            
+                            // check if array contains the element
+                            if (groupsArray.indexOf(group) == "-1") {
+                                groupsArray.push(group);
+                                tableIdsArray.push(tableId);
+                                
+                                $('#tables-wrapper').append('<table id="' + tableId + '" class="display">'
+                                                            + '<thead>'
+                                                            +     '<tr>'
+                                                            +         '<th colspan="5">' + group + '</th>'
+                                                            +     '</tr>'
+                                                            +     '<tr>'
+                                                            +         '<th>Part Number</th>'
+                                                            +         '<th>Manufacturer</th>'
+                                                            +         '<th>Catalog Description</th>'
+                                                            +         '<th>Sales Price</th>'
+                                                            +         '<th>Upgrade Fee*</th>'
+                                                            +     '</tr>'
+                                                            + '</thead>'
+                                                            + '<tbody>'
+                                                            + '</tbody>'
+                                                         +'</table>'
+                                );
+                            }
+                        });
+                        makeDataTables(groupsArray, tableIdsArray);
+                    }
+                    
+                    function makeDataTables(groupsArrayParam, tableIdsArrayParam) {
+                        for (var i = 0; i < groupsArray.length; i++) {
+                            catalogXml.find("item catalogGroup:contains(" + groupsArray[i] + ")").each(function() {
+                                
+                                var item = $(this).parent();
+                                
+                                var partNumber = item.find('partNumber').text(),
+                                    manufacturer = item.find('manufacturer').text(),
+                                    catalogdescription = item.find('catalogdescription').text(),
+                                    catalogGroup = item.find('catalogGroup').text(),
+                                    salesprice = item.find('salesprice').text(),
+                                    upgradefee = item.find('upgradefee').text();
+                                
+                                
+                                // Dollar sign formatting for number 0 zero
+                                if (salesprice.length > 0) {
+                                    salesprice = "$ " + salesprice;
+                                }
+                                if (upgradefee.length > 0) {
+                                    upgradefee = "$ " + upgradefee;
+                                }
+                                
+                                $('#' + tableIdsArray[i]).dataTable().fnAddData([
+                                    partNumber,
+                                    manufacturer,
+                                    catalogdescription,
+                                    salesprice,
+                                    upgradefee
+                                ]);
+                            });
+                        }
+                    }
+                    
+                    makeGroupsArray(catalogXml);
+
+
+                    var myString = "Ip Phones";
+                    var pattern = / /;
+                    var replacement = "-";
+                    console.log(myString.toLowerCase().replace(pattern, replacement));
+                  
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="tables-wrapper">
+    </div>
+</body>
+</html>
