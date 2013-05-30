@@ -128,6 +128,7 @@
                     makeDataTables(groupsArray, tableIdsArray);
                 }
             });
+            $('tr.alt.over').css("background", "#EDEFE6");
         });
         
 })(jQuery);
