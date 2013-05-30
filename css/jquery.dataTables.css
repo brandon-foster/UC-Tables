@@ -14,7 +14,7 @@ table.dataTable thead th {
 	font-weight: bold;
 	cursor: pointer;
 	*cursor: hand;
-	/*background:#E3E0D6*/;
+	/*background:#E3E0D6;*/
 }
 
 table.dataTable tfoot th {
