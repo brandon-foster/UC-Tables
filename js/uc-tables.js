@@ -20,7 +20,8 @@
             $.ajax({
                 type: "GET",
                 //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql",
-                url: "catalog.xml",
+                //url: "catalog.xml",
+                url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql",
                 dataType: "xml",
                 success: function(xml) {
                     
@@ -83,7 +84,7 @@
                      */
                     function specialFormatSP(salesPriceParam) {
                                 if (salesPriceParam.length > 0) {
-                                    salesPriceParam = "$ " + salesPriceParam;
+                                    salesPriceParam = "$" + salesPriceParam;
                                     
                                     var periodIndex = salesPriceParam.indexOf(".");
                                     if (salesPriceParam.substr(periodIndex).length == 2) {
@@ -103,7 +104,7 @@
                      */
                     function specialFormatUF(upgradeFeeParam) {
                                 if (upgradeFeeParam.length > 0) {
-                                    upgradeFeeParam = "$ " + upgradeFeeParam;
+                                    upgradeFeeParam = "$" + upgradeFeeParam;
                                 }
                                 else if (upgradeFeeParam.length == 0) {
                                     upgradeFeeParam = "N/A";
