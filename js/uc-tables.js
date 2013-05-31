@@ -16,7 +16,19 @@
         return $(objNode).text() == arrProperties[3];
     }
     
-    $(document).ready(function() {            
+    $.fn.dataTableExt.oSort['price-asc']  = function(a,b) {
+        a = (a == "N/A") ? 0 : parseFloat(a.replace('$', ""));
+        b = (b == "N/A") ? 0 : parseFloat(b.replace('$', ""));
+				return ((a < b) ? -1 : ((a > b) ?  1 : 0));
+		};
+ 
+		$.fn.dataTableExt.oSort['price-desc'] = function(a,b) {
+        a = (a == "N/A") ? 0 : parseFloat(a.replace('$', ""));
+        b = (b == "N/A") ? 0 : parseFloat(b.replace('$', ""));
+				return ((a < b) ?  1 : ((a > b) ? -1 : 0));
+		};
+		
+		$(document).ready(function() {            
         $.ajax({
             type: "GET",
             //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql",
@@ -24,166 +36,161 @@
             //url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql",
             dataType: "xml",
             success: function(xml) {
-                var catalogXml = $(xml);
-
-                // Empty array of strings that appear in the content of catalog group elements in the XML.
-                var groupsArray = [];
-                // Used in function makeDataTables(groupsArrayParam, tableIdsArrayParam)
-                var tableIdsArray = [];
-                makeGroupsArray(catalogXml);
-                makeDataTables(groupsArray, tableIdsArray);
-                
-                
-                /**
-                 * Populate array groupsArray with each catalog group
-                 */
-                function makeGroupsArray(xmlFile) {
-                    //Populate the groupsArray
-                    xmlFile.find('item catalogGroup').each(function(index, value) {
-                        var group = $(value).text();
-                        
-                        // Generate an id value for the HTML <table> tags
-                        var tableId = group.toLowerCase().split(" ").join('-');
-                        
-                        generateHtml(group, tableId);
-                    });
-                }
-                
-                /**
-                 * Push the group to the groupsArray and its
-                 * corresponding tableId to the tableIdsArray if
-                 * the group is not found in groupsArray
-                 *
-                 * @param group The name of the group to be 
-                 * @param tableId The id value for the table so the DataTables
-                 *        plug-in knows which table manipulate.
-                 */
-                function generateHtml(group, tableId) {
-                    if (groupsArray.indexOf(group) == "-1") {
-                        groupsArray.push(group);
-                        tableIdsArray.push(tableId);
-                        
-                        $('#tables-wrapper').append('<table id="' + tableId + '" class="display">'
-                                                    + '<thead>'
-                                                    +     '<tr>'
-                                                    +         '<th colspan="5">' + group + '</th>'
-                                                    +     '</tr>'
-                                                    +     '<tr>'
-                                                    +         '<th>Part Number</th>'
-                                                    +         '<th>Manufacturer</th>'
-                                                    +         '<th>Catalog Name</th>'
-                                                    +         '<th>Sales Price</th>'
-                                                    +         '<th>Upgrade Fee*</th>'
-                                                    +     '</tr>'
-                                                    + '</thead>'
-                                                    + '<tbody>'
-                                                    + '</tbody>'
-                                                 +'</table>'
-                        );
-                    }
-                 }
-
-                /**
-                 * Loop through each xml catalogGroup tag and assign
-                 * variable references to the values of that tag's siblings.
-                 *
-                 * @param {String[]} groupsArrayParam array of String values from the
-                 *        catalogGroup tags from the xml catalog.
-                 * @param {String[]} tableIdsParam array of String generated id values
-                 *        to be used for the DataTables plug-in to call
-                 *        dataTable() on the appropriate tables.
-                 */
-                function makeDataTables(groupsArray, tableIdsArrayParam) {
-                    for (var i = 0, len = groupsArray.length; i < len; i++) {
-                        var groupName = groupsArray[i];
-                        catalogXml.find("item catalogGroup:textEquals('" + groupName + "')").each(function(indx) {
-                            
-                            var item = $(this).parent();
-                            
-                            // assign variables to the values of the catalogGroup tag's siblings
-                            var partNumber = item.find('partNumber').text(),
-                                manufacturer = item.find('manufacturer').text(),
-                                catalogName = item.find('catalogName').text(),
-                                catalogGroup = item.find('catalogGroup').text(),
-                                salesPrice = item.find('salesPrice').text(),
-                                upgradeFee = item.find('upgradeFee').text();
-                            
-                            // Special formatting
-                            salesPrice = specialFormatSP(salesPrice);
-                            upgradeFee = specialFormatUF(upgradeFee);
-                            
-                            //Get the table with the id generated by the makeGroupsArray function and create a DataTable with columns for
-                            // partNumber, manufacturer, catalogDescription, salesprice and upgradefee
-                            var table;
-                            if (indx == 0) {
-                                table = $('#' + tableIdsArray[i]).dataTable({
-                                    "bFilter": false,
-                                    "bPaginate": false,
-                                    "bInfo": false,
-                                    "aoColumns": [
-                                        null,
-                                        null,
-                                        null,
-                                        { "sType": "html"},
-                                        { "sType": "html"}
-                                    ]
-                                });
-                            }
-                            else {
-                                table = $('#' + tableIdsArray[i]).dataTable();
-                            }
-                            
-                            table.fnAddData([
-                                partNumber,
-                                manufacturer,
-                                catalogName,
-                                salesPrice,
-                                upgradeFee
-                            ]);
-                        });
-                    }
-                }
-                
-                /**
-                 * Format the salesPrice String variable to display values
-                 * in the form of $99 if it is a whole number and in the
-                 * form of $99.99 if in the form of a decimal number.
-                 *
-                 * @param {String} salesPriceParam the salesPrice variable
-                 *        passed from makeDataTables(groupsArray,
-                 *        tableIdsArrayParam);
-                 */
-                function specialFormatSP(salesPriceParam) {
-                    if (salesPriceParam.length > 0) {
-                        salesPriceParam = "$" + salesPriceParam;
-                        
-                        var periodIndex = salesPriceParam.indexOf(".");
-                        if (salesPriceParam.substr(periodIndex).length == 2) {
-                            salesPriceParam = salesPriceParam + "0";
-                        }
-                    }
-                    return salesPriceParam;
-                }
-                
-                /**
-                 * Format the upgradeFee String variable to display "N/A"
-                 * if there is no value for that item in the xml catalog.
-                 *
-                 * @param {String} upgradeFeeParam the upgradeFee variable
-                 *        passed from makeDataTables(groupsArray,
-                 *        tableIdsArrayParam);
-                 */
-                function specialFormatUF(upgradeFeeParam) {
-                    if (upgradeFeeParam.length > 0) {
-                        upgradeFeeParam = "$" + upgradeFeeParam;
-                    }
-                    else if (upgradeFeeParam.length == 0) {
-                        upgradeFeeParam = "N/A";
-                    }
-                    return upgradeFeeParam
-                }
+                handleXmlResponse(xml);
+                return;
             }
         });
     });
+    
+    function handleXmlResponse(xml) {
+      var $xml = $(xml);
+      var $tableOutput = $("#tables-wrapper");
+      var groups = getCatalogGroups($xml);
+      createTables($tableOutput, groups);
+      populateTables($xml, groups, $tableOutput);
+      initializeDataTables($tableOutput);
+    }
+    
+    /**
+     * Get the catalog groups from the xml
+     * @param $xml The XML containing catalog groups
+     * @return An array of groups of structure 
+     *    { name: [Catalog Group Name], id: [html id]}
+     */
+    function getCatalogGroups($xml) {
+      var groups = Array();
+      var names = Array();
+      $xml.find('item catalogGroup').each(function(index, value) {
+        var group = $(value).text();
+        if (names.indexOf(group) != -1) {
+					return;
+        }
         
+        // Generate an id value for the HTML <table> tags
+        var tableId = group.toLowerCase().split(" ").join('-');
+        groups.push({ name: group, id: tableId });
+        names.push(group);
+      });
+      return groups;
+    }
+    
+    /**
+     * Create table stubs for the various catalog groups
+     * @param 
+     * @param groups The Groups array of objects
+     */
+    function createTables($appendTo, groups) {
+      for (var i = 0, size = groups.length; i < size; i++) {
+					$appendTo.append('<table id="' + groups[i].id + '" class="display">'
+														+ '<thead>'
+														+     '<tr>'
+														+         '<th colspan="5">' + groups[i].name + '</th>'
+														+     '</tr>'
+														+     '<tr>'
+														+         '<th>Part Number</th>'
+														+         '<th>Manufacturer</th>'
+														+         '<th>Catalog Name</th>'
+														+         '<th>Sales Price</th>'
+														+         '<th>Upgrade Fee*</th>'
+														+     '</tr>'
+														+ '</thead>'
+														+ '<tbody>'
+														+ '</tbody>'
+												 +'</table>'
+					);
+      }
+    }
+    
+    /**
+     * Populate the catalog group tables with their items
+     * @param $xml The jQuery wrapped object of the XML
+     * @param groups The array of Group objects
+     * @param $tables The DOM element containing all of the Catalog Group tables that will
+     * have rows appended to
+     */
+    function populateTables($xml, groups, $tables) {
+			for (var i = 0, size = groups.length; i < size; i++) {
+				$xml.find("item catalogGroup:textEquals(" + groups[i].name + ")").each(function() {
+					var item = $(this).parent();
+					
+					// assign variables to the values of the catalogGroup tag's siblings
+					var partNumber = item.find('partNumber').text(),
+							manufacturer = item.find('manufacturer').text(),
+							catalogName = item.find('catalogName').text(),
+							salesPrice = specialFormatSP( item.find('salesPrice').text() ),
+							upgradeFee = specialFormatUF( item.find('upgradeFee').text() );
+							
+							
+				 $tables.find('#' + groups[i].id + " tbody").append("<tr>" 
+					 + "<td>" + partNumber + "</td>"
+					 + "<td>" + manufacturer + "</td>"
+					 + "<td>" + catalogName + "</td>"
+					 + "<td>" + salesPrice + "</td>"
+					 + "<td>" + upgradeFee + "</td>"
+					 + "</tr>"
+				  );
+				});
+			}
+    }
+    
+    /**
+     * Initialize jQuery DataTables on the tables contained within the provided object
+     * @param $tables The DOM element containing all of the tables
+     */
+    function initializeDataTables($tables) {
+    	$tables.find("table").each(function() {
+    		$(this).dataTable( {
+					"bFilter": false,
+					"bPaginate": false,
+					"bInfo": false,
+					"aoColumns": [
+						null,
+						null,
+						null,
+						{ "sType": "price" },
+						{ "sType": "price" }
+					]
+        });
+    	});
+    }
+    
+		/**
+		 * Format the salesPrice String variable to display values
+		 * in the form of $99 if it is a whole number and in the
+		 * form of $99.99 if in the form of a decimal number.
+		 *
+		 * @param {String} salesPriceParam the salesPrice variable
+		 *        passed from makeDataTables(groupsArray,
+		 *        tableIdsArrayParam);
+		 */
+		function specialFormatSP(salesPriceParam) {
+				if (salesPriceParam.length > 0) {
+						salesPriceParam = "$" + salesPriceParam;
+						
+						var periodIndex = salesPriceParam.indexOf(".");
+						if (salesPriceParam.substr(periodIndex).length == 2) {
+								salesPriceParam = salesPriceParam + "0";
+						}
+				}
+				return salesPriceParam;
+		}
+		
+		/**
+		 * Format the upgradeFee String variable to display "N/A"
+		 * if there is no value for that item in the xml catalog.
+		 *
+		 * @param {String} upgradeFeeParam the upgradeFee variable
+		 *        passed from makeDataTables(groupsArray,
+		 *        tableIdsArrayParam);
+		 */
+		function specialFormatUF(upgradeFeeParam) {
+				if (upgradeFeeParam.length > 0) {
+						upgradeFeeParam = "$" + upgradeFeeParam;
+				}
+				else if (upgradeFeeParam.length == 0) {
+						upgradeFeeParam = "N/A";
+				}
+				return upgradeFeeParam
+		}
+    
 })(jQuery);
