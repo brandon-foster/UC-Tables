@@ -3,448 +3,448 @@
    <item>
       <partNumber>P-0270</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Phone 9621g</catalogdescription>
+      <catalogName>Phone 9621g</catalogName>
       <catalogGroup>Ip Phones</catalogGroup>
-      <salesprice>244</salesprice>
-      <upgradefee>47</upgradefee>
+      <salesPrice>244</salesPrice>
+      <upgradeFee>47</upgradeFee>
    </item>
    <item>
       <partNumber>P-0271</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Phone 9641g</catalogdescription>
+      <catalogName>Phone 9641g</catalogName>
       <catalogGroup>Ip Phones</catalogGroup>
-      <salesprice>279</salesprice>
-      <upgradefee>76</upgradefee>
+      <salesPrice>279</salesPrice>
+      <upgradeFee>76</upgradeFee>
    </item>
    <item>
       <partNumber>P-0272</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Phone 9611g</catalogdescription>
+      <catalogName>Phone 9611g</catalogName>
       <catalogGroup>Ip Phones</catalogGroup>
-      <salesprice>188</salesprice>
-      <upgradefee/>
+      <salesPrice>188</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0273</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Expansion Module 12 Button</catalogdescription>
+      <catalogName>Expansion Module 12 Button</catalogName>
       <catalogGroup>Button Modules</catalogGroup>
-      <salesprice>75</salesprice>
-      <upgradefee/>
+      <salesPrice>75</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0274</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Conference Phone B-159</catalogdescription>
+      <catalogName>Conference Phone B-159</catalogName>
       <catalogGroup>Conference Phones</catalogGroup>
-      <salesprice>473</salesprice>
-      <upgradefee/>
+      <salesPrice>473</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0275</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Phone 9608</catalogdescription>
+      <catalogName>Phone 9608</catalogName>
       <catalogGroup>Ip Phones</catalogGroup>
-      <salesprice>123</salesprice>
-      <upgradefee/>
+      <salesPrice>123</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0276</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Phone 9601</catalogdescription>
+      <catalogName>Phone 9601</catalogName>
       <catalogGroup>Ip Phones</catalogGroup>
-      <salesprice>91</salesprice>
-      <upgradefee/>
+      <salesPrice>91</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0296</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Headset 9450, Wireless</catalogdescription>
+      <catalogName>Headset 9450, Wireless</catalogName>
       <catalogGroup>Dect Headsets</catalogGroup>
-      <salesprice>189</salesprice>
-      <upgradefee/>
+      <salesPrice>189</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4765</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Neckband [900/9400]</catalogdescription>
+      <catalogName>Neckband [900/9400]</catalogName>
       <catalogGroup>Headset Accessories</catalogGroup>
-      <salesprice>17</salesprice>
-      <upgradefee/>
+      <salesPrice>17</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0279</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Phone 9404</catalogdescription>
+      <catalogName>Phone 9404</catalogName>
       <catalogGroup>Digital Phones</catalogGroup>
-      <salesprice>207</salesprice>
-      <upgradefee>15</upgradefee>
+      <salesPrice>207</salesPrice>
+      <upgradeFee>15</upgradeFee>
    </item>
    <item>
       <partNumber>P-0280</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Phone 9408</catalogdescription>
+      <catalogName>Phone 9408</catalogName>
       <catalogGroup>Digital Phones</catalogGroup>
-      <salesprice>317</salesprice>
-      <upgradefee>107</upgradefee>
+      <salesPrice>317</salesPrice>
+      <upgradeFee>107</upgradeFee>
    </item>
    <item>
       <partNumber>P-0283</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Headset &amp; Base Station 9465 Duo</catalogdescription>
+      <catalogName>Headset &amp; Base Station 9465 Duo</catalogName>
       <catalogGroup>Dect Headsets</catalogGroup>
-      <salesprice>240</salesprice>
-      <upgradefee/>
+      <salesPrice>240</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0284</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Headset &amp; Base Station 9470</catalogdescription>
+      <catalogName>Headset &amp; Base Station 9470</catalogName>
       <catalogGroup>Dect Headsets</catalogGroup>
-      <salesprice>234</salesprice>
-      <upgradefee/>
+      <salesPrice>234</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0285</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Headset &amp; Base Station 6470 Go</catalogdescription>
+      <catalogName>Headset &amp; Base Station 6470 Go</catalogName>
       <catalogGroup>Headsets</catalogGroup>
-      <salesprice>216</salesprice>
-      <upgradefee/>
+      <salesPrice>216</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0286</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Headset &amp; Base Station 9460 Duo</catalogdescription>
+      <catalogName>Headset &amp; Base Station 9460 Duo</catalogName>
       <catalogGroup>Dect Headsets</catalogGroup>
-      <salesprice>218</salesprice>
-      <upgradefee/>
+      <salesPrice>218</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0287</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Usb Speakerphone 410</catalogdescription>
+      <catalogName>Usb Speakerphone 410</catalogName>
       <catalogGroup>Usb Phones</catalogGroup>
-      <salesprice>88</salesprice>
-      <upgradefee/>
+      <salesPrice>88</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0288</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Conference Phone B-149</catalogdescription>
-      <salesprice>296</salesprice>
-      <upgradefee/>
+      <catalogName>Conference Phone B-149</catalogName>
+      <salesPrice>296</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0289</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Conference Phone B-179</catalogdescription>
+      <catalogName>Conference Phone B-179</catalogName>
       <catalogGroup>Conference Phones</catalogGroup>
-      <salesprice>512</salesprice>
-      <upgradefee/>
+      <salesPrice>512</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0290</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Phone 3740</catalogdescription>
+      <catalogName>Dect Phone 3740</catalogName>
       <catalogGroup>Dect Phones</catalogGroup>
-      <salesprice>397</salesprice>
-      <upgradefee/>
+      <salesPrice>397</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0291</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Wifi Phone 3641</catalogdescription>
+      <catalogName>Wifi Phone 3641</catalogName>
       <catalogGroup>Wifi Phones</catalogGroup>
-      <salesprice>423</salesprice>
-      <upgradefee/>
+      <salesPrice>423</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0292</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Wifi Phone 3645</catalogdescription>
+      <catalogName>Wifi Phone 3645</catalogName>
       <catalogGroup>Wifi Phones</catalogGroup>
-      <salesprice>479</salesprice>
-      <upgradefee/>
+      <salesPrice>479</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0293</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Phone 3720</catalogdescription>
+      <catalogName>Dect Phone 3720</catalogName>
       <catalogGroup>Dect Phones</catalogGroup>
-      <salesprice>142</salesprice>
-      <upgradefee/>
+      <salesPrice>142</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0294</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Phone 3725</catalogdescription>
+      <catalogName>Dect Phone 3725</catalogName>
       <catalogGroup>Dect Phones</catalogGroup>
-      <salesprice>248</salesprice>
-      <upgradefee/>
+      <salesPrice>248</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4636</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Expansion Mic [B-100]</catalogdescription>
+      <catalogName>Expansion Mic [B-100]</catalogName>
       <catalogGroup>Conference Phone Accessories</catalogGroup>
-      <salesprice>119</salesprice>
-      <upgradefee/>
+      <salesPrice>119</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4698</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Wall Mount Bracket [9600]</catalogdescription>
+      <catalogName>Wall Mount Bracket [9600]</catalogName>
       <catalogGroup>Accessories</catalogGroup>
-      <salesprice>14.5</salesprice>
-      <upgradefee/>
+      <salesPrice>14.5</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4707</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Phone Charger [Standard]</catalogdescription>
+      <catalogName>Dect Phone Charger [Standard]</catalogName>
       <catalogGroup>Dect Phone Accessories</catalogGroup>
-      <salesprice>23</salesprice>
-      <upgradefee/>
+      <salesPrice>23</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4708</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Wifi Phone Charger [Single]</catalogdescription>
+      <catalogName>Wifi Phone Charger [Single]</catalogName>
       <catalogGroup>Wifi Phone Accessories</catalogGroup>
-      <salesprice>57</salesprice>
-      <upgradefee/>
+      <salesPrice>57</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4709</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Wifi Phone Charger [Dual]</catalogdescription>
+      <catalogName>Wifi Phone Charger [Dual]</catalogName>
       <catalogGroup>Wifi Phone Accessories</catalogGroup>
-      <salesprice>82</salesprice>
-      <upgradefee/>
+      <salesPrice>82</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4710</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Wifi Phone Battery [Extended]</catalogdescription>
+      <catalogName>Wifi Phone Battery [Extended]</catalogName>
       <catalogGroup>Wifi Phone Accessories</catalogGroup>
-      <salesprice>65</salesprice>
-      <upgradefee/>
+      <salesPrice>65</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4711</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Wifi Phone Battery [Ultra]</catalogdescription>
+      <catalogName>Wifi Phone Battery [Ultra]</catalogName>
       <catalogGroup>Wifi Phone Accessories</catalogGroup>
-      <salesprice>78</salesprice>
-      <upgradefee/>
+      <salesPrice>78</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4712</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Battery [3720]</catalogdescription>
+      <catalogName>Dect Battery [3720]</catalogName>
       <catalogGroup>Dect Phone Accessories</catalogGroup>
-      <salesprice>24</salesprice>
-      <upgradefee/>
+      <salesPrice>24</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4715</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Phone Charger [Advanced]</catalogdescription>
+      <catalogName>Dect Phone Charger [Advanced]</catalogName>
       <catalogGroup>Dect Phone Accessories</catalogGroup>
-      <salesprice>334</salesprice>
-      <upgradefee/>
+      <salesPrice>334</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4723</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Usb Cable Charger 3641/3645</catalogdescription>
+      <catalogName>Usb Cable Charger 3641/3645</catalogName>
       <catalogGroup>Wifi Phone Accessories</catalogGroup>
-      <salesprice>40</salesprice>
-      <upgradefee/>
+      <salesPrice>40</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4724</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Phone Charger [Standard]</catalogdescription>
+      <catalogName>Dect Phone Charger [Standard]</catalogName>
       <catalogGroup>Dect Phone Accessories</catalogGroup>
-      <salesprice>23</salesprice>
-      <upgradefee/>
+      <salesPrice>23</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4726</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Battery [3725]</catalogdescription>
+      <catalogName>Dect Battery [3725]</catalogName>
       <catalogGroup>Dect Phone Accessories</catalogGroup>
-      <salesprice>24</salesprice>
-      <upgradefee/>
+      <salesPrice>24</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4727</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Battery [3740]</catalogdescription>
+      <catalogName>Dect Battery [3740]</catalogName>
       <catalogGroup>Dect Phone Accessories</catalogGroup>
-      <salesprice>78</salesprice>
-      <upgradefee/>
+      <salesPrice>78</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4728</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Phone Charger [Advanced]</catalogdescription>
+      <catalogName>Dect Phone Charger [Advanced]</catalogName>
       <catalogGroup>Dect Phone Accessories</catalogGroup>
-      <salesprice>274</salesprice>
-      <upgradefee/>
+      <salesPrice>274</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4725</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Ac Adapter</catalogdescription>
+      <catalogName>Dect Ac Adapter</catalogName>
       <catalogGroup>Dect Phone Accessories</catalogGroup>
-      <salesprice>78</salesprice>
-      <upgradefee/>
+      <salesPrice>78</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4729</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Dect Mounting Kit</catalogdescription>
+      <catalogName>Dect Mounting Kit</catalogName>
       <catalogGroup>Dect Phone Accessories</catalogGroup>
-      <salesprice>69</salesprice>
-      <upgradefee/>
+      <salesPrice>69</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4766</partNumber>
       <manufacturer>POLYCOM</manufacturer>
-      <catalogdescription>Expansion Mic Wireless [Vt-1000]</catalogdescription>
+      <catalogName>Expansion Mic Wireless [Vt-1000]</catalogName>
       <catalogGroup>Accessories</catalogGroup>
-      <salesprice>492</salesprice>
-      <upgradefee/>
+      <salesPrice>492</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4772</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Neckband [6400]</catalogdescription>
+      <catalogName>Neckband [6400]</catalogName>
       <catalogGroup>Headset Accessories</catalogGroup>
-      <salesprice>17.5</salesprice>
-      <upgradefee/>
+      <salesPrice>17.5</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4775</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Handset Cord, 12' Gray</catalogdescription>
+      <catalogName>Handset Cord, 12' Gray</catalogName>
       <catalogGroup>Accessories</catalogGroup>
-      <salesprice>4</salesprice>
-      <upgradefee/>
+      <salesPrice>4</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0297</partNumber>
       <manufacturer>POLYCOM</manufacturer>
-      <catalogdescription>Conference Phone Vtx-1000</catalogdescription>
+      <catalogName>Conference Phone Vtx-1000</catalogName>
       <catalogGroup>Conference Phones</catalogGroup>
-      <salesprice>840</salesprice>
-      <upgradefee/>
+      <salesPrice>840</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0298</partNumber>
       <manufacturer>POLYCOM</manufacturer>
-      <catalogdescription>Conference Phone Ip-7000</catalogdescription>
+      <catalogName>Conference Phone Ip-7000</catalogName>
       <catalogGroup>Conference Phones</catalogGroup>
-      <salesprice>1146</salesprice>
-      <upgradefee/>
+      <salesPrice>1146</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4779</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Headset 9450, Headset Only</catalogdescription>
+      <catalogName>Headset 9450, Headset Only</catalogName>
       <catalogGroup>Headsets</catalogGroup>
-      <salesprice>111</salesprice>
-      <upgradefee/>
+      <salesPrice>111</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0301</partNumber>
       <manufacturer>PANASONIC</manufacturer>
-      <catalogdescription>Dect Cordless Answer System[4Handsets]</catalogdescription>
+      <catalogName>Dect Cordless Answer System[4Handsets]</catalogName>
       <catalogGroup>Dect Phones</catalogGroup>
-      <salesprice>146</salesprice>
-      <upgradefee/>
+      <salesPrice>146</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4801</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Handset, 96xx/96x1 Amplified Speech</catalogdescription>
+      <catalogName>Handset, 96xx/96x1 Amplified Speech</catalogName>
       <catalogGroup>Accessories</catalogGroup>
-      <salesprice>205</salesprice>
-      <upgradefee/>
+      <salesPrice>205</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4643</partNumber>
       <manufacturer/>
-      <catalogdescription>Phone Power Cable</catalogdescription>
+      <catalogName>Phone Power Cable</catalogName>
       <catalogGroup>Accessories</catalogGroup>
-      <salesprice>28</salesprice>
-      <upgradefee/>
+      <salesPrice>28</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4787</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Headset, Pro 9470 [Headset Only]</catalogdescription>
+      <catalogName>Headset, Pro 9470 [Headset Only]</catalogName>
       <catalogGroup>Dect Headsets</catalogGroup>
-      <salesprice>195</salesprice>
-      <upgradefee/>
+      <salesPrice>195</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>P-0295</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Phone 9650c</catalogdescription>
+      <catalogName>Phone 9650c</catalogName>
       <catalogGroup>Ip Phones</catalogGroup>
-      <salesprice>386</salesprice>
-      <upgradefee>165</upgradefee>
+      <salesPrice>386</salesPrice>
+      <upgradeFee>165</upgradeFee>
    </item>
    <item>
       <partNumber>H-4741</partNumber>
       <manufacturer>JABRA</manufacturer>
-      <catalogdescription>Electronic Hook Switch [9600 Ip Phones]</catalogdescription>
+      <catalogName>Electronic Hook Switch [9600 Ip Phones]</catalogName>
       <catalogGroup>Headset Accessories</catalogGroup>
-      <salesprice>25.5</salesprice>
-      <upgradefee/>
+      <salesPrice>25.5</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4770</partNumber>
       <manufacturer/>
-      <catalogdescription>Shoulder Rest [Gray]</catalogdescription>
+      <catalogName>Shoulder Rest [Gray]</catalogName>
       <catalogGroup>Accessories</catalogGroup>
-      <salesprice>8</salesprice>
-      <upgradefee/>
+      <salesPrice>8</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4780</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Electronic Hook Switch [9400 Digital Phones]</catalogdescription>
+      <catalogName>Electronic Hook Switch [9400 Digital Phones]</catalogName>
       <catalogGroup>Headset Accessories</catalogGroup>
-      <salesprice>14.5</salesprice>
-      <upgradefee/>
+      <salesPrice>14.5</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4776</partNumber>
       <manufacturer>AVAYA</manufacturer>
-      <catalogdescription>Wall Mount Bracket [9601]</catalogdescription>
+      <catalogName>Wall Mount Bracket [9601]</catalogName>
       <catalogGroup>Accessories</catalogGroup>
-      <salesprice>8.5</salesprice>
-      <upgradefee/>
+      <salesPrice>8.5</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4790</partNumber>
       <manufacturer/>
-      <catalogdescription>Handset Cord, 25' Gray</catalogdescription>
+      <catalogName>Handset Cord, 25' Gray</catalogName>
       <catalogGroup>Accessories</catalogGroup>
-      <salesprice>6.5</salesprice>
-      <upgradefee/>
+      <salesPrice>6.5</salesPrice>
+      <upgradeFee/>
    </item>
    <item>
       <partNumber>H-4716</partNumber>
       <manufacturer/>
-      <catalogdescription>Handset Cord, 12' Gray</catalogdescription>
+      <catalogName>Handset Cord, 12' Gray</catalogName>
       <catalogGroup>Accessories</catalogGroup>
-      <salesprice>4</salesprice>
-      <upgradefee/>
+      <salesPrice>4</salesPrice>
+      <upgradeFee/>
    </item>
 </items>
