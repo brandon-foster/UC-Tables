@@ -31,6 +31,10 @@ table.dataTable td {
 	/*padding: 6px;*/
 }
 
+/*#vt_sp_body #vt_general #vt_with_rb #vt_body_col #block-system-main .content .field-items*/ #tables-wrapper tr:hover{
+	background-color: #EDEFE6;
+}
+
 table.dataTable td.center,
 table.dataTable td.dataTables_empty {
 	text-align: center;
