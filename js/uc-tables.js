@@ -37,7 +37,7 @@
     /**
      * Parse the XML catalog
      */
-    $(document).ready(function() {            
+    $(document).ready(function() {
         $.ajax({
             type: "GET",
             //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql", // Old pre-prod XML catalog
@@ -46,9 +46,9 @@
             dataType: "xml",
             success: function(xml) {
                 handleXmlResponse(xml);
-                return;
             }
         });
+        addFootnotes($('#tables-wrapper'));
     });
     
     function handleXmlResponse(xml) {
@@ -201,6 +201,21 @@
             upgradeFeeParam = "N/A";
         }
         return upgradeFeeParam
+    }
+    
+    function addFootnotes($elem) {
+        $elem.after(
+            '<p class="footnote">* The 9611g is the standard model'
+            + 'telephone that will be provided'
+            + 'as a replacement to all existing ROLM telephones as part of the'
+            + 'campus-wide unified communications project.</p>'
+            + '<p class="footnote">** Please note that the appropriate'
+            + 'Electronic Hook Switch for your phone type is required for full'
+            + 'functionality of the Jabra headsets</p>'
+        );
+        $(document).ajaxStop(function() {
+           $('.footnote').css('display', 'block'); 
+        });
     }
     
 })(jQuery);
