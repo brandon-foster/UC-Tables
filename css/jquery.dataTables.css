@@ -231,5 +231,6 @@ table.dataTable thead td:active {
 
 .footnote {
 	font-style: italic;
+	display: none;
 }
 
