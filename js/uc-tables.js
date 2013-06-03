@@ -16,18 +16,27 @@
         return $(objNode).text() == arrProperties[3];
     }
     
+    /**
+     * Modify DataTables sorting
+     */
     $.fn.dataTableExt.oSort['price-asc']  = function(a,b) {
         a = (a == "N/A") ? 0 : parseFloat(a.replace('$', ""));
         b = (b == "N/A") ? 0 : parseFloat(b.replace('$', ""));
 	return ((a < b) ? -1 : ((a > b) ?  1 : 0));
     };
  
+    /**
+     * Modify DataTables sorting
+     */
     $.fn.dataTableExt.oSort['price-desc'] = function(a,b) {
         a = (a == "N/A") ? 0 : parseFloat(a.replace('$', ""));
         b = (b == "N/A") ? 0 : parseFloat(b.replace('$', ""));
 	return ((a < b) ?  1 : ((a > b) ? -1 : 0));
     };
-		
+    
+    /**
+     * Parse the XML catalog
+     */
     $(document).ready(function() {            
         $.ajax({
             type: "GET",
@@ -76,7 +85,7 @@
     
     /**
      * Create table stubs for the various catalog groups
-     * @param 
+     * @param $appendTo The output to append the HTML table
      * @param groups The Groups array of objects
      */
     function createTables($appendTo, groups) {
