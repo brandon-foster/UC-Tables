@@ -38,22 +38,30 @@
      * Parse the XML catalog
      */
     $(document).ready(function() {
+        var $tableOutput = $('#tables-wrapper');
         $.ajax({
             type: "GET",
-            //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql", // Old pre-prod XML catalog
             url: "catalog.xml", // Use for local development
+            //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql", // Old pre-prod XML catalog
             //url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql", // New pre-prod XML catalog
             dataType: "xml",
             success: function(xml) {
-                handleXmlResponse(xml);
+                handleXmlResponse(xml, $tableOutput);
             }
         });
-        addFootnotes($('#tables-wrapper'));
+        addLoadingMessage($tableOutput);
+        addFootnotes($tableOutput);
     });
     
-    function handleXmlResponse(xml) {
+    /**
+     * Create tables, populate them, and initialize DataTables
+     * 
+     * @param xml The XML file to create tables from
+     * @param $tableOutput the target to output the tables to -- i.e., an
+     * element to append the tables to
+     */ 
+    function handleXmlResponse(xml, $tableOutput) {
       var $xml = $(xml);
-      var $tableOutput = $("#tables-wrapper");
       var groups = getCatalogGroups($xml);
       createTables($tableOutput, groups);
       populateTables($xml, groups, $tableOutput);
@@ -62,6 +70,7 @@
     
     /**
      * Get the catalog groups from the xml
+     * 
      * @param $xml The XML containing catalog groups
      * @return An array of groups of structure 
      *    { name: [Catalog Group Name], id: [html id]}
@@ -85,6 +94,7 @@
     
     /**
      * Create table stubs for the various catalog groups
+     * 
      * @param $appendTo The output to append the HTML table
      * @param groups The Groups array of objects
      */
@@ -112,6 +122,7 @@
     
     /**
      * Populate the catalog group tables with their items
+     * 
      * @param $xml The jQuery wrapped object of the XML
      * @param groups The array of Group objects
      * @param $tables The DOM element containing all of the Catalog Group tables that will
@@ -145,6 +156,7 @@
     
     /**
      * Initialize jQuery DataTables on the tables contained within the provided object
+     * 
      * @param $tables The DOM element containing all of the tables
      */
     function initializeDataTables($tables) {
@@ -203,8 +215,28 @@
         return upgradeFeeParam
     }
     
-    function addFootnotes($elem) {
-        $elem.after(
+    /**
+     * Add a loading message that gets removed after the AJAX call
+     * 
+     * @param $addAfter The element to add the footnotes after -- i.e.,
+     * #tables-wrapper
+     */
+    function addLoadingMessage($addAfter) {
+        $addAfter.after('<p id="loading-message">Loading...</p>');
+        $(document).ajaxStop(function() {
+            $('#loading-message').css('display', 'none');
+        });
+    }
+    
+    /**
+     * Add footnotes after the div that wraps the tables -- i.e.,
+     * #tables-wrapper -- and display them after the AJAX call
+     * 
+     * @param $addAfter The element to add the footnotes after -- i.e.,
+     * #tables-wrapper
+     */
+    function addFootnotes($addAfter) {
+        $addAfter.after(
             '<p class="footnote">* The 9611g is the standard model'
             + 'telephone that will be provided'
             + 'as a replacement to all existing ROLM telephones as part of the'
