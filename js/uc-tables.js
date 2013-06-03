@@ -166,11 +166,11 @@
                 "bPaginate": false,
                 "bInfo": false,
                 "aoColumns": [
-                    null,
-                    null,
-                    null,
-                    { "sType": "price" },
-                    { "sType": "price" }
+                    { "sWidth": "20%" },
+                    { "sWidth": "20%" },
+                    { "sWidth": "20%" },
+                    { "sType": "price", "sWidth": "20%" },
+                    { "sType": "price", "sWidth": "20%" }
                 ]
             });
     	});
