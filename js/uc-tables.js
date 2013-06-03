@@ -40,9 +40,9 @@
     $(document).ready(function() {            
         $.ajax({
             type: "GET",
-            //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql",
+            //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql", // Old pre-prod XML catalog
             url: "catalog.xml", // Use for local development
-            //url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql",
+            //url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql", // New pre-prod XML catalog
             dataType: "xml",
             success: function(xml) {
                 handleXmlResponse(xml);
@@ -93,6 +93,7 @@
 	$appendTo.append('<table id="' + groups[i].id + '" class="display">'
 			+ '<thead>'
 			+     '<tr>'
+                        +       '<th colspan="5">' + groups[i].name + '</th>'
 			+     '</tr>'
 			+     '<tr>'
 			+         '<th>Part Number</th>'
