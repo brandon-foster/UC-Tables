@@ -19,16 +19,16 @@
     $.fn.dataTableExt.oSort['price-asc']  = function(a,b) {
         a = (a == "N/A") ? 0 : parseFloat(a.replace('$', ""));
         b = (b == "N/A") ? 0 : parseFloat(b.replace('$', ""));
-				return ((a < b) ? -1 : ((a > b) ?  1 : 0));
-		};
+	return ((a < b) ? -1 : ((a > b) ?  1 : 0));
+    };
  
-		$.fn.dataTableExt.oSort['price-desc'] = function(a,b) {
+    $.fn.dataTableExt.oSort['price-desc'] = function(a,b) {
         a = (a == "N/A") ? 0 : parseFloat(a.replace('$', ""));
         b = (b == "N/A") ? 0 : parseFloat(b.replace('$', ""));
-				return ((a < b) ?  1 : ((a > b) ? -1 : 0));
-		};
+	return ((a < b) ?  1 : ((a > b) ? -1 : 0));
+    };
 		
-		$(document).ready(function() {            
+    $(document).ready(function() {            
         $.ajax({
             type: "GET",
             //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql",
@@ -63,7 +63,7 @@
       $xml.find('item catalogGroup').each(function(index, value) {
         var group = $(value).text();
         if (names.indexOf(group) != -1) {
-					return;
+	    return;
         }
         
         // Generate an id value for the HTML <table> tags
@@ -81,23 +81,22 @@
      */
     function createTables($appendTo, groups) {
       for (var i = 0, size = groups.length; i < size; i++) {
-					$appendTo.append('<table id="' + groups[i].id + '" class="display">'
-														+ '<thead>'
-														+     '<tr>'
-														+         '<th colspan="5">' + groups[i].name + '</th>'
-														+     '</tr>'
-														+     '<tr>'
-														+         '<th>Part Number</th>'
-														+         '<th>Manufacturer</th>'
-														+         '<th>Catalog Name</th>'
-														+         '<th>Sales Price</th>'
-														+         '<th>Upgrade Fee*</th>'
-														+     '</tr>'
-														+ '</thead>'
-														+ '<tbody>'
-														+ '</tbody>'
-												 +'</table>'
-					);
+	$appendTo.append('<table id="' + groups[i].id + '" class="display">'
+			+ '<thead>'
+			+     '<tr>'
+			+     '</tr>'
+			+     '<tr>'
+			+         '<th>Part Number</th>'
+			+         '<th>Manufacturer</th>'
+			+         '<th>Catalog Name</th>'
+			+         '<th>Sales Price</th>'
+			+         '<th>Upgrade Fee*</th>'
+			+     '</tr>'
+			+ '</thead>'
+			+ '<tbody>'
+			+ '</tbody>'
+                        +'</table>'
+	);
       }
     }
     
@@ -109,28 +108,29 @@
      * have rows appended to
      */
     function populateTables($xml, groups, $tables) {
-			for (var i = 0, size = groups.length; i < size; i++) {
-				$xml.find("item catalogGroup:textEquals(" + groups[i].name + ")").each(function() {
-					var item = $(this).parent();
-					
-					// assign variables to the values of the catalogGroup tag's siblings
-					var partNumber = item.find('partNumber').text(),
-							manufacturer = item.find('manufacturer').text(),
-							catalogName = item.find('catalogName').text(),
-							salesPrice = specialFormatSP( item.find('salesPrice').text() ),
-							upgradeFee = specialFormatUF( item.find('upgradeFee').text() );
-							
-							
-				 $tables.find('#' + groups[i].id + " tbody").append("<tr>" 
-					 + "<td>" + partNumber + "</td>"
-					 + "<td>" + manufacturer + "</td>"
-					 + "<td>" + catalogName + "</td>"
-					 + "<td>" + salesPrice + "</td>"
-					 + "<td>" + upgradeFee + "</td>"
-					 + "</tr>"
-				  );
-				});
-			}
+	for (var i = 0, size = groups.length; i < size; i++) {
+            $xml.find("item catalogGroup:textEquals(" + groups[i].name + ")").each(function() {
+		var item = $(this).parent();
+		
+		// assign variables to the values of the catalogGroup tag's siblings
+		var partNumber = item.find('partNumber').text(),
+		manufacturer = item.find('manufacturer').text(),
+		catalogName = item.find('catalogName').text(),
+		salesPrice = specialFormatSP( item.find('salesPrice').text() ),
+		upgradeFee = specialFormatUF( item.find('upgradeFee').text() );
+		
+                
+		$tables.find('#' + groups[i].id + " tbody").append(
+                    "<tr>" 
+                    + "<td>" + partNumber + "</td>"
+                    + "<td>" + manufacturer + "</td>"
+		    + "<td>" + catalogName + "</td>"
+		    + "<td>" + salesPrice + "</td>"
+		    + "<td>" + upgradeFee + "</td>"
+		    + "</tr>"
+		    );
+	    });
+	}
     }
     
     /**
@@ -139,58 +139,58 @@
      */
     function initializeDataTables($tables) {
     	$tables.find("table").each(function() {
-    		$(this).dataTable( {
-					"bFilter": false,
-					"bPaginate": false,
-					"bInfo": false,
-					"aoColumns": [
-						null,
-						null,
-						null,
-						{ "sType": "price" },
-						{ "sType": "price" }
-					]
-        });
+            $(this).dataTable( {
+                "bFilter": false,
+                "bPaginate": false,
+                "bInfo": false,
+                "aoColumns": [
+                    null,
+                    null,
+                    null,
+                    { "sType": "price" },
+                    { "sType": "price" }
+                ]
+            });
     	});
     }
     
-		/**
-		 * Format the salesPrice String variable to display values
-		 * in the form of $99 if it is a whole number and in the
-		 * form of $99.99 if in the form of a decimal number.
-		 *
-		 * @param {String} salesPriceParam the salesPrice variable
-		 *        passed from makeDataTables(groupsArray,
-		 *        tableIdsArrayParam);
-		 */
-		function specialFormatSP(salesPriceParam) {
-				if (salesPriceParam.length > 0) {
-						salesPriceParam = "$" + salesPriceParam;
-						
-						var periodIndex = salesPriceParam.indexOf(".");
-						if (salesPriceParam.substr(periodIndex).length == 2) {
-								salesPriceParam = salesPriceParam + "0";
-						}
-				}
-				return salesPriceParam;
-		}
-		
-		/**
-		 * Format the upgradeFee String variable to display "N/A"
-		 * if there is no value for that item in the xml catalog.
-		 *
-		 * @param {String} upgradeFeeParam the upgradeFee variable
-		 *        passed from makeDataTables(groupsArray,
-		 *        tableIdsArrayParam);
-		 */
-		function specialFormatUF(upgradeFeeParam) {
-				if (upgradeFeeParam.length > 0) {
-						upgradeFeeParam = "$" + upgradeFeeParam;
-				}
-				else if (upgradeFeeParam.length == 0) {
-						upgradeFeeParam = "N/A";
-				}
-				return upgradeFeeParam
-		}
+    /**
+     * Format the salesPrice String variable to display values
+     * in the form of $99 if it is a whole number and in the
+     * form of $99.99 if in the form of a decimal number.
+     *
+     * @param {String} salesPriceParam the salesPrice variable
+     *        passed from makeDataTables(groupsArray,
+     *        tableIdsArrayParam);
+     */
+    function specialFormatSP(salesPriceParam) {
+        if (salesPriceParam.length > 0) {
+            salesPriceParam = "$" + salesPriceParam;
+            
+            var periodIndex = salesPriceParam.indexOf(".");
+            if (salesPriceParam.substr(periodIndex).length == 2) {
+                salesPriceParam = salesPriceParam + "0";
+            }
+        }
+        return salesPriceParam;
+    }
+    
+    /**
+     * Format the upgradeFee String variable to display "N/A"
+     * if there is no value for that item in the xml catalog.
+     *
+     * @param {String} upgradeFeeParam the upgradeFee variable
+     *        passed from makeDataTables(groupsArray,
+     *        tableIdsArrayParam);
+     */
+    function specialFormatUF(upgradeFeeParam) {
+        if (upgradeFeeParam.length > 0) {
+            upgradeFeeParam = "$" + upgradeFeeParam;
+        }
+        else if (upgradeFeeParam.length == 0) {
+            upgradeFeeParam = "N/A";
+        }
+        return upgradeFeeParam
+    }
     
 })(jQuery);
