@@ -41,9 +41,9 @@
         var $tableOutput = $('#tables-wrapper');
         $.ajax({
             type: "GET",
-            //url: "catalog.xml", // Use for local development
+            url: "catalog.xml", // Use for local development
             //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql", // Old pre-prod XML catalog
-            url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql", // New pre-prod XML catalog
+            //url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql", // New pre-prod XML catalog
             dataType: "xml",
             success: function(xml) {
                 handleXmlResponse(xml, $tableOutput);
