@@ -5,6 +5,9 @@
      * @version 2013.05.22
      *
      * Dynamically create HTML tables from the UC Device Pricing XML data.
+     * This script requires the linking HTML page to have a
+     * <div id="tables-wrapper"></div> element and a
+     * <p id="loading-message">Loading...</p> element.
      */
     
     /**
@@ -41,15 +44,15 @@
         var $tableOutput = $('#tables-wrapper');
         $.ajax({
             type: "GET",
-            url: "catalog.xml", // Use for local development
+            //url: "catalog.xml", // Use for local development
             //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql", // Old pre-prod XML catalog
-            //url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql", // New pre-prod XML catalog
+            url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql", // New pre-prod XML catalog
             dataType: "xml",
             success: function(xml) {
                 handleXmlResponse(xml, $tableOutput);
             }
         });
-        addLoadingMessage($tableOutput);
+        removeLoadingMessage();
         addFootnotes($tableOutput);
     });
     
@@ -216,13 +219,9 @@
     }
     
     /**
-     * Add a loading message that gets removed after the AJAX call
-     * 
-     * @param $addAfter The element to add the footnotes after -- i.e.,
-     * #tables-wrapper
+     * Remove the loading message after the AJAX call.
      */
-    function addLoadingMessage($addAfter) {
-        $addAfter.after('<p id="loading-message">Loading...</p>');
+    function removeLoadingMessage() {
         $(document).ajaxStop(function() {
             $('#loading-message').css('display', 'none');
         });
