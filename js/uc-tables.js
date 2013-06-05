@@ -44,9 +44,9 @@
         var $tableOutput = $('#tables-wrapper');
         $.ajax({
             type: "GET",
-            //url: "catalog.xml", // Use for local development
+            url: "catalog.xml", // Use for local development
             //url: Drupal.settings.basePath + "xsql/atlas/uc_catalog.xsql", // Old pre-prod XML catalog
-            url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql", // New pre-prod XML catalog
+            //url: Drupal.settings.basePath + "xsql/atlas/uc/devices/catalog.xsql", // New pre-prod XML catalog
             dataType: "xml",
             success: function(xml) {
                 handleXmlResponse(xml, $tableOutput);
@@ -102,8 +102,9 @@
      * @param groups The Groups array of objects
      */
     function createTables($appendTo, groups) {
-      for (var i = 0, size = groups.length; i < size; i++) {
-	$appendTo.append('<table id="' + groups[i].id + '" class="display">'
+        var tablesString = "";
+        for (var i = 0, size = groups.length; i < size; i++) {
+        tablesString  += '<table id="' + groups[i].id + '" class="display">'
 			+ '<thead>'
 			+     '<tr>'
                         +       '<th colspan="5">' + groups[i].name + '</th>'
@@ -118,9 +119,9 @@
 			+ '</thead>'
 			+ '<tbody>'
 			+ '</tbody>'
-                        +'</table>'
-	);
-      }
+                        +'</table>';
+        }
+        $appendTo.append(tablesString);
     }
     
     /**
